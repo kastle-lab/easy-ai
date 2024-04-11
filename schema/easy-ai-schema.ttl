@@ -50,7 +50,10 @@
 
 ###  https://kastle-lab.org/easy-ai/Actor
 :Actor rdf:type owl:Class ;
-       rdfs:subClassOf :Input ,
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :performsInputRole ;
+                         owl:someValuesFrom :InputRole
+                       ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :participatesInProcess ;
                          owl:allValuesFrom :Engineer
@@ -59,14 +62,17 @@
                          owl:onProperty :participatesInProcess ;
                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                          owl:onClass :Engineer
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :performsInputRole ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :InputRole
                        ] .
 
 
 ###  https://kastle-lab.org/easy-ai/Artifact
 :Artifact rdf:type owl:Class ;
-          rdfs:subClassOf :Input ,
-                          :Output ,
-                          [ rdf:type owl:Restriction ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
                             owl:onProperty :participatesInProcess ;
                             owl:someValuesFrom :Deduction
                           ] ,
@@ -77,6 +83,14 @@
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :participatesInProcess ;
                             owl:someValuesFrom :Transform
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :performsInputRole ;
+                            owl:someValuesFrom :InputRole
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :performsOutputRole ;
+                            owl:someValuesFrom :OutputRole
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :participatesInProcess ;
@@ -92,21 +106,22 @@
                             owl:onProperty :participatesInProcess ;
                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass :Transform
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :performsInputRole ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :InputRole
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :performsOutputRole ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :OutputRole
                           ] .
 
 
 ###  https://kastle-lab.org/easy-ai/Data
 :Data rdf:type owl:Class ;
-      rdfs:subClassOf :Artifact ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :participatesInProcess ;
-                        owl:someValuesFrom :Embed
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :participatesInProcess ;
-                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onClass :Embed
-                      ] .
+      rdfs:subClassOf :Artifact .
 
 
 ###  https://kastle-lab.org/easy-ai/DataTransformation
@@ -215,43 +230,23 @@
        rdfs:subClassOf :Process .
 
 
-###  https://kastle-lab.org/easy-ai/Input
-:Input rdf:type owl:Class ;
-       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                         owl:onProperty :participatesInDataTransformation ;
-                         owl:someValuesFrom :DataTransformation
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :performsInputRole ;
-                         owl:allValuesFrom :InputRole
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :participatesInDataTransformation ;
-                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                         owl:onClass :DataTransformation
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :performsInputRole ;
-                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                         owl:onClass :InputRole
-                       ] .
-
-
 ###  https://kastle-lab.org/easy-ai/InputRole
 :InputRole rdf:type owl:Class .
 
 
 ###  https://kastle-lab.org/easy-ai/Model
 :Model rdf:type owl:Class ;
-       rdfs:subClassOf :Input ,
-                       :Output ,
-                       [ rdf:type owl:Restriction ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
                          owl:onProperty :participatesInProcess ;
                          owl:someValuesFrom :Deduction
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :participatesInProcess ;
                          owl:someValuesFrom :Train
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :performsOutputRole ;
+                         owl:someValuesFrom :OutputRole
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :participatesInProcess ;
@@ -262,29 +257,12 @@
                          owl:onProperty :participatesInProcess ;
                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                          owl:onClass :Train
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :performsOutputRole ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :OutputRole
                        ] .
-
-
-###  https://kastle-lab.org/easy-ai/Output
-:Output rdf:type owl:Class ;
-        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                          owl:onProperty :participatesInDataTransformation ;
-                          owl:allValuesFrom :DataTransformation
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty :performsOutputRole ;
-                          owl:allValuesFrom :OutputRole
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty :participatesInDataTransformation ;
-                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onClass :DataTransformation
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty :performsOutputRole ;
-                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onClass :OutputRole
-                        ] .
 
 
 ###  https://kastle-lab.org/easy-ai/OutputRole
@@ -293,25 +271,7 @@
 
 ###  https://kastle-lab.org/easy-ai/Process
 :Process rdf:type owl:Class ;
-         rdfs:subClassOf :DataTransformation ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :accepts ;
-                           owl:allValuesFrom :Input
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :produces ;
-                           owl:allValuesFrom :Output
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :accepts ;
-                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass :Input
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :produces ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass :Output
-                         ] .
+         rdfs:subClassOf :DataTransformation .
 
 
 ###  https://kastle-lab.org/easy-ai/SemanticModel
@@ -330,7 +290,16 @@
 
 ###  https://kastle-lab.org/easy-ai/Symbol
 :Symbol rdf:type owl:Class ;
-        rdfs:subClassOf :Artifact .
+        rdfs:subClassOf :Artifact ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :participatesInProcess ;
+                          owl:someValuesFrom :Embed
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :participatesInProcess ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Embed
+                        ] .
 
 
 ###  https://kastle-lab.org/easy-ai/Train
