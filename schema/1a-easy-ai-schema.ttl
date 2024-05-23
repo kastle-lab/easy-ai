@@ -4,9 +4,23 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix opla: <http://ontologydesignpatterns.org/opla#> .
+@prefix opla-core: <http://ontologydesignpatterns.org/opla-core#> .
+@prefix opla-sd: <http://ontologydesignpatterns.org/opla-sd#> .
+@prefix opla-cp: <http://ontologydesignpatterns.org/opla-cp#> .
 @base <https://kastle-lab.org/easy-ai/> .
 
-<https://kastle-lab.org/easy-ai> rdf:type owl:Ontology .
+
+<https://kastle-lab.org/easy-ai> rdf:type owl:Ontology ;
+                                                                                      opla-core:hasPatternName "1a Elementary Pattern" ;
+                                                                                      opla-cp:addressesScenario """Use Case
+Insert Description.""" ;
+                                                                                      opla-sd:hasSchemaDiagramFileName "1a-elementary-pattern.pdf" ;
+                                                                                      opla-sd:hasExampleDiagramFileName "1a-example.pdf" ;
+                                                                                      dc:contributor "Brandon Dave", "Cogan Shimizu" ;
+                                                                                      dc:creator "Alexis Ellis" .
+
 
 #################################################################
 #    Annotation properties
