@@ -1,12 +1,18 @@
-@prefix : <https://kastle-lab.org/easy-ai/> .
+@prefix : <https://kastle-lab.org/easy-ai/2c> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://kastle-lab.org/easy-ai/> .
+@base <https://kastle-lab.org/easy-ai/2c> .
 
-<https://kastle-lab.org/easy-ai/> rdf:type owl:Ontology .
+<https://kastle-lab.org/easy-ai/2c> rdf:type owl:Ontology ;
+                                                                                      opla-core:hasPatternName "2c Elementary Pattern" ;
+                                                                                      opla-cp:addressesScenario """Use Case
+Insert Description.""" ;
+                                                                                      opla-sd:hasSchemaDiagramFileName "2c-elementary-pattern.pdf" ;
+                                                                                      dc:contributor "Brandon Dave", "Cogan Shimizu" ;
+                                                                                      dc:creator "Alexis Ellis" .
 
 #################################################################
 #    Annotation properties
@@ -28,57 +34,57 @@
 #    Object Properties
 #################################################################
 
-###  https://kastle-lab.org/easy-ai/#PerformsInputRole
-<https://kastle-lab.org/easy-ai/#PerformsInputRole> rdf:type owl:ObjectProperty .
+###  https://kastle-lab.org/easy-ai/2c#PerformsInputRole
+<https://kastle-lab.org/easy-ai/2c#PerformsInputRole> rdf:type owl:ObjectProperty .
 
 
-###  https://kastle-lab.org/easy-ai/#accepts
-<https://kastle-lab.org/easy-ai/#accepts> rdf:type owl:ObjectProperty .
+###  https://kastle-lab.org/easy-ai/2c#accepts
+<https://kastle-lab.org/easy-ai/2c#accepts> rdf:type owl:ObjectProperty .
 
 
-###  https://kastle-lab.org/easy-ai/#performsInputRole
-<https://kastle-lab.org/easy-ai/#performsInputRole> rdf:type owl:ObjectProperty .
+###  https://kastle-lab.org/easy-ai/2c#performsInputRole
+<https://kastle-lab.org/easy-ai/2c#performsInputRole> rdf:type owl:ObjectProperty .
 
 
-###  https://kastle-lab.org/easy-ai/#performsOutputRole
-<https://kastle-lab.org/easy-ai/#performsOutputRole> rdf:type owl:ObjectProperty .
+###  https://kastle-lab.org/easy-ai/2c#performsOutputRole
+<https://kastle-lab.org/easy-ai/2c#performsOutputRole> rdf:type owl:ObjectProperty .
 
 
-###  https://kastle-lab.org/easy-ai/#produces
-<https://kastle-lab.org/easy-ai/#produces> rdf:type owl:ObjectProperty .
+###  https://kastle-lab.org/easy-ai/2c#produces
+<https://kastle-lab.org/easy-ai/2c#produces> rdf:type owl:ObjectProperty .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  https://kastle-lab.org/easy-ai/#Artifact
-<https://kastle-lab.org/easy-ai/#Artifact> rdf:type owl:Class ;
+###  https://kastle-lab.org/easy-ai/2c#Artifact
+<https://kastle-lab.org/easy-ai/2c#Artifact> rdf:type owl:Class ;
                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <https://kastle-lab.org/easy-ai/#PerformsInputRole> ;
-                                                             owl:allValuesFrom <https://kastle-lab.org/easy-ai/#InputRole>
+                                                             owl:onProperty <https://kastle-lab.org/easy-ai/2c#PerformsInputRole> ;
+                                                             owl:allValuesFrom <https://kastle-lab.org/easy-ai/2c#InputRole>
                                                            ] ,
                                                            [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <https://kastle-lab.org/easy-ai/#PerformsInputRole> ;
+                                                             owl:onProperty <https://kastle-lab.org/easy-ai/2c#PerformsInputRole> ;
                                                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass <https://kastle-lab.org/easy-ai/#InputRole>
+                                                             owl:onClass <https://kastle-lab.org/easy-ai/2c#InputRole>
                                                            ] ,
                                                            [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <https://kastle-lab.org/easy-ai/#performsInputRole> ;
+                                                             owl:onProperty <https://kastle-lab.org/easy-ai/2c#performsInputRole> ;
                                                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass <https://kastle-lab.org/easy-ai/#InputRole>
+                                                             owl:onClass <https://kastle-lab.org/easy-ai/2c#InputRole>
                                                            ] ,
                                                            [ rdf:type owl:Restriction ;
-                                                             owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/#PerformsInputRole>
+                                                             owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/2c#PerformsInputRole>
                                                                             ] ;
                                                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass <https://kastle-lab.org/easy-ai/#InputRole>
+                                                             owl:onClass <https://kastle-lab.org/easy-ai/2c#InputRole>
                                                            ] ,
                                                            [ rdf:type owl:Restriction ;
-                                                             owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/#performsInputRole>
+                                                             owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/2c#performsInputRole>
                                                                             ] ;
                                                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass <https://kastle-lab.org/easy-ai/#InputRole>
+                                                             owl:onClass <https://kastle-lab.org/easy-ai/2c#InputRole>
                                                            ] ;
                                            <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "80.45441454143699"^^xsd:double ;
                                                                                                         <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "59.89801017607377"^^xsd:double ;
@@ -86,17 +92,17 @@
                                                                                                       ] .
 
 
-###  https://kastle-lab.org/easy-ai/#InputRole
-<https://kastle-lab.org/easy-ai/#InputRole> rdf:type owl:Class ;
+###  https://kastle-lab.org/easy-ai/2c#InputRole
+<https://kastle-lab.org/easy-ai/2c#InputRole> rdf:type owl:Class ;
                                             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                              owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/#PerformsInputRole>
+                                                              owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/2c#PerformsInputRole>
                                                                              ] ;
-                                                              owl:someValuesFrom <https://kastle-lab.org/easy-ai/#Artifact>
+                                                              owl:someValuesFrom <https://kastle-lab.org/easy-ai/2c#Artifact>
                                                             ] ,
                                                             [ rdf:type owl:Restriction ;
-                                                              owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/#performsInputRole>
+                                                              owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/2c#performsInputRole>
                                                                              ] ;
-                                                              owl:someValuesFrom <https://kastle-lab.org/easy-ai/#Artifact>
+                                                              owl:someValuesFrom <https://kastle-lab.org/easy-ai/2c#Artifact>
                                                             ] ;
                                             <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "69.71578537833204"^^xsd:double ;
                                                                                                          <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "189.9581490892145"^^xsd:double ;
@@ -104,22 +110,22 @@
                                                                                                        ] .
 
 
-###  https://kastle-lab.org/easy-ai/#Model
-<https://kastle-lab.org/easy-ai/#Model> rdf:type owl:Class ;
+###  https://kastle-lab.org/easy-ai/2c#Model
+<https://kastle-lab.org/easy-ai/2c#Model> rdf:type owl:Class ;
                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <https://kastle-lab.org/easy-ai/#performsOutputRole> ;
-                                                          owl:allValuesFrom <https://kastle-lab.org/easy-ai/#OutputRole>
+                                                          owl:onProperty <https://kastle-lab.org/easy-ai/2c#performsOutputRole> ;
+                                                          owl:allValuesFrom <https://kastle-lab.org/easy-ai/2c#OutputRole>
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <https://kastle-lab.org/easy-ai/#performsOutputRole> ;
+                                                          owl:onProperty <https://kastle-lab.org/easy-ai/2c#performsOutputRole> ;
                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                          owl:onClass <https://kastle-lab.org/easy-ai/#OutputRole>
+                                                          owl:onClass <https://kastle-lab.org/easy-ai/2c#OutputRole>
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/#performsOutputRole>
+                                                          owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/2c#performsOutputRole>
                                                                          ] ;
                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                          owl:onClass <https://kastle-lab.org/easy-ai/#OutputRole>
+                                                          owl:onClass <https://kastle-lab.org/easy-ai/2c#OutputRole>
                                                         ] ;
                                         <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "390.086999555293"^^xsd:double ;
                                                                                                      <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "59.769753388200485"^^xsd:double ;
@@ -127,12 +133,12 @@
                                                                                                    ] .
 
 
-###  https://kastle-lab.org/easy-ai/#OutputRole
-<https://kastle-lab.org/easy-ai/#OutputRole> rdf:type owl:Class ;
+###  https://kastle-lab.org/easy-ai/2c#OutputRole
+<https://kastle-lab.org/easy-ai/2c#OutputRole> rdf:type owl:Class ;
                                              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                               owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/#performsOutputRole>
+                                                               owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/2c#performsOutputRole>
                                                                               ] ;
-                                                               owl:someValuesFrom <https://kastle-lab.org/easy-ai/#Model>
+                                                               owl:someValuesFrom <https://kastle-lab.org/easy-ai/2c#Model>
                                                              ] ;
                                              <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "370.27123944858437"^^xsd:double ;
                                                                                                           <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "189.65296819793056"^^xsd:double ;
@@ -140,45 +146,45 @@
                                                                                                         ] .
 
 
-###  https://kastle-lab.org/easy-ai/#Process
-<https://kastle-lab.org/easy-ai/#Process> rdf:type owl:Class ;
+###  https://kastle-lab.org/easy-ai/2c#Process
+<https://kastle-lab.org/easy-ai/2c#Process> rdf:type owl:Class ;
                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                            owl:onProperty <https://kastle-lab.org/easy-ai/#accepts> ;
-                                                            owl:someValuesFrom <https://kastle-lab.org/easy-ai/#InputRole>
+                                                            owl:onProperty <https://kastle-lab.org/easy-ai/2c#accepts> ;
+                                                            owl:someValuesFrom <https://kastle-lab.org/easy-ai/2c#InputRole>
                                                           ] ,
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty <https://kastle-lab.org/easy-ai/#produces> ;
-                                                            owl:someValuesFrom <https://kastle-lab.org/easy-ai/#OutputRole>
+                                                            owl:onProperty <https://kastle-lab.org/easy-ai/2c#produces> ;
+                                                            owl:someValuesFrom <https://kastle-lab.org/easy-ai/2c#OutputRole>
                                                           ] ,
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty <https://kastle-lab.org/easy-ai/#accepts> ;
-                                                            owl:allValuesFrom <https://kastle-lab.org/easy-ai/#InputRole>
+                                                            owl:onProperty <https://kastle-lab.org/easy-ai/2c#accepts> ;
+                                                            owl:allValuesFrom <https://kastle-lab.org/easy-ai/2c#InputRole>
                                                           ] ,
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty <https://kastle-lab.org/easy-ai/#produces> ;
-                                                            owl:allValuesFrom <https://kastle-lab.org/easy-ai/#OutputRole>
+                                                            owl:onProperty <https://kastle-lab.org/easy-ai/2c#produces> ;
+                                                            owl:allValuesFrom <https://kastle-lab.org/easy-ai/2c#OutputRole>
                                                           ] ,
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty <https://kastle-lab.org/easy-ai/#accepts> ;
+                                                            owl:onProperty <https://kastle-lab.org/easy-ai/2c#accepts> ;
                                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                            owl:onClass <https://kastle-lab.org/easy-ai/#InputRole>
+                                                            owl:onClass <https://kastle-lab.org/easy-ai/2c#InputRole>
                                                           ] ,
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty <https://kastle-lab.org/easy-ai/#produces> ;
+                                                            owl:onProperty <https://kastle-lab.org/easy-ai/2c#produces> ;
                                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                            owl:onClass <https://kastle-lab.org/easy-ai/#OutputRole>
+                                                            owl:onClass <https://kastle-lab.org/easy-ai/2c#OutputRole>
                                                           ] ,
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/#accepts>
+                                                            owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/2c#accepts>
                                                                            ] ;
                                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                            owl:onClass <https://kastle-lab.org/easy-ai/#InputRole>
+                                                            owl:onClass <https://kastle-lab.org/easy-ai/2c#InputRole>
                                                           ] ,
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/#produces>
+                                                            owl:onProperty [ owl:inverseOf <https://kastle-lab.org/easy-ai/2c#produces>
                                                                            ] ;
                                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                            owl:onClass <https://kastle-lab.org/easy-ai/#OutputRole>
+                                                            owl:onClass <https://kastle-lab.org/easy-ai/2c#OutputRole>
                                                           ] ;
                                           <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "229.91029760929223"^^xsd:double ;
                                                                                                        <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "189.74429433390787"^^xsd:double ;
@@ -186,9 +192,9 @@
                                                                                                      ] .
 
 
-###  https://kastle-lab.org/easy-ai/#Train
-<https://kastle-lab.org/easy-ai/#Train> rdf:type owl:Class ;
-                                        rdfs:subClassOf <https://kastle-lab.org/easy-ai/#Process> ;
+###  https://kastle-lab.org/easy-ai/2c#Train
+<https://kastle-lab.org/easy-ai/2c#Train> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://kastle-lab.org/easy-ai/2c#Process> ;
                                         <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "229.5792734971986"^^xsd:double ;
                                                                                                      <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "59.901440578307046"^^xsd:double ;
                                                                                                      rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
@@ -200,30 +206,30 @@
 #################################################################
 
 [ rdf:type owl:Restriction ;
-  owl:onProperty <https://kastle-lab.org/easy-ai/#PerformsInputRole> ;
-  owl:someValuesFrom <https://kastle-lab.org/easy-ai/#InputRole> ;
-  rdfs:subClassOf <https://kastle-lab.org/easy-ai/#Artifact>
+  owl:onProperty <https://kastle-lab.org/easy-ai/2c#PerformsInputRole> ;
+  owl:someValuesFrom <https://kastle-lab.org/easy-ai/2c#InputRole> ;
+  rdfs:subClassOf <https://kastle-lab.org/easy-ai/2c#Artifact>
 ] .
 
 
 [ rdf:type owl:Restriction ;
-  owl:onProperty <https://kastle-lab.org/easy-ai/#accepts> ;
-  owl:someValuesFrom <https://kastle-lab.org/easy-ai/#InputRole> ;
-  rdfs:subClassOf <https://kastle-lab.org/easy-ai/#Process>
+  owl:onProperty <https://kastle-lab.org/easy-ai/2c#accepts> ;
+  owl:someValuesFrom <https://kastle-lab.org/easy-ai/2c#InputRole> ;
+  rdfs:subClassOf <https://kastle-lab.org/easy-ai/2c#Process>
 ] .
 
 
 [ rdf:type owl:Restriction ;
-  owl:onProperty <https://kastle-lab.org/easy-ai/#performsOutputRole> ;
-  owl:someValuesFrom <https://kastle-lab.org/easy-ai/#OutputRole> ;
-  rdfs:subClassOf <https://kastle-lab.org/easy-ai/#Model>
+  owl:onProperty <https://kastle-lab.org/easy-ai/2c#performsOutputRole> ;
+  owl:someValuesFrom <https://kastle-lab.org/easy-ai/2c#OutputRole> ;
+  rdfs:subClassOf <https://kastle-lab.org/easy-ai/2c#Model>
 ] .
 
 
 [ rdf:type owl:Restriction ;
-  owl:onProperty <https://kastle-lab.org/easy-ai/#produces> ;
-  owl:someValuesFrom <https://kastle-lab.org/easy-ai/#OutputRole> ;
-  rdfs:subClassOf <https://kastle-lab.org/easy-ai/#Process>
+  owl:onProperty <https://kastle-lab.org/easy-ai/2c#produces> ;
+  owl:someValuesFrom <https://kastle-lab.org/easy-ai/2c#OutputRole> ;
+  rdfs:subClassOf <https://kastle-lab.org/easy-ai/2c#Process>
 ] .
 
 

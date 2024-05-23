@@ -7,10 +7,10 @@
 @base <https://kastle-lab.org/easy-ai/1c> .
 
 <https://kastle-lab.org/easy-ai/1c> rdf:type owl:Ontology ;
-                                                                                      opla-core:hasPatternName "1b Elementary Pattern" ;
+                                                                                      opla-core:hasPatternName "1c Elementary Pattern" ;
                                                                                       opla-cp:addressesScenario """Use Case
 Insert Description.""" ;
-                                                                                      opla-sd:hasSchemaDiagramFileName "1b-elementary-pattern.pdf" ;
+                                                                                      opla-sd:hasSchemaDiagramFileName "1c-elementary-pattern.pdf" ;
                                                                                       dc:contributor "Brandon Dave", "Cogan Shimizu" ;
                                                                                       dc:creator "Alexis Ellis" .
 
