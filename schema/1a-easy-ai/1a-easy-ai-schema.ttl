@@ -1,4 +1,4 @@
-@prefix : <https://kastle-lab.org/easy-ai/> .
+@prefix : <https://kastle-lab.org/easy-ai/1a> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -9,10 +9,10 @@
 @prefix opla-core: <http://ontologydesignpatterns.org/opla-core#> .
 @prefix opla-sd: <http://ontologydesignpatterns.org/opla-sd#> .
 @prefix opla-cp: <http://ontologydesignpatterns.org/opla-cp#> .
-@base <https://kastle-lab.org/easy-ai/> .
+@base <https://kastle-lab.org/easy-ai/1a> .
 
 
-<https://kastle-lab.org/easy-ai> rdf:type owl:Ontology ;
+<https://kastle-lab.org/easy-ai/1a> rdf:type owl:Ontology ;
                                                                                       opla-core:hasPatternName "1a Elementary Pattern" ;
                                                                                       opla-cp:addressesScenario """Use Case
 Insert Description.""" ;
@@ -46,7 +46,7 @@ Insert Description.""" ;
 :Artifact rdf:type owl:Class .
 
 
-###  https://kastle-lab.org/easy-ai/Data
+###  https://kastle-lab.org/easy-ai/1a#Data
 :Data rdf:type owl:Class ;
       rdfs:subClassOf :Artifact ;
       <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "80.15315199384992"^^xsd:double ;
@@ -55,7 +55,7 @@ Insert Description.""" ;
                                                                  ] .
 
 
-###  https://kastle-lab.org/easy-ai/Generate
+###  https://kastle-lab.org/easy-ai/1a#Generate
 :Generate rdf:type owl:Class ;
           rdfs:subClassOf :Process ;
           <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "250.29597916595378"^^xsd:double ;
@@ -64,7 +64,7 @@ Insert Description.""" ;
                                                                      ] .
 
 
-###  https://kastle-lab.org/easy-ai/InputRole
+###  https://kastle-lab.org/easy-ai/1a#InputRole
 :InputRole rdf:type owl:Class ;
            <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "70.36500745096083"^^xsd:double ;
                                                                         <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "230.2649792176955"^^xsd:double ;
@@ -72,7 +72,7 @@ Insert Description.""" ;
                                                                       ] .
 
 
-###  https://kastle-lab.org/easy-ai/Model
+###  https://kastle-lab.org/easy-ai/1a#Model
 :Model rdf:type owl:Class ;
        <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "459.70675173628206"^^xsd:double ;
                                                                     <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "119.72182655690077"^^xsd:double ;
@@ -80,7 +80,7 @@ Insert Description.""" ;
                                                                   ] .
 
 
-###  https://kastle-lab.org/easy-ai/OutputRole
+###  https://kastle-lab.org/easy-ai/1a#OutputRole
 :OutputRole rdf:type owl:Class ;
             <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "440.0299648246865"^^xsd:double ;
                                                                          <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "230.1986320595098"^^xsd:double ;
@@ -88,7 +88,7 @@ Insert Description.""" ;
                                                                        ] .
 
 
-###  https://kastle-lab.org/easy-ai/Process
+###  https://kastle-lab.org/easy-ai/1a#Process
 :Process rdf:type owl:Class ;
          <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "260.321151973764"^^xsd:double ;
                                                                       <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "230.15240651468687"^^xsd:double ;
@@ -96,7 +96,7 @@ Insert Description.""" ;
                                                                     ] .
 
 
-###  https://kastle-lab.org/easy-ai/Train
+###  https://kastle-lab.org/easy-ai/1a#Train
 :Train rdf:type owl:Class ;
        rdfs:subClassOf :Generate ;
        <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "260.32353584137"^^xsd:double ;
