@@ -4,7 +4,6 @@ from rdflib import URIRef, Graph, Namespace, Literal
 from rdflib import OWL, RDF, RDFS, XSD, TIME
 
 #  Directories
-# pattern_path = "../schema/"
 pattern_path = "../schema/"
 
 # Prefix Configurations
@@ -13,7 +12,8 @@ modl_namespace = "https://archive.org/services/purl/purl/modular_ontology_design
 opla_namespace = "https://ontologydesignpatterns.org/"
 
 pfs = {
-"": Namespace(f"{modl_namespace}"),
+"": Namespace(f"{name_space}"),
+"modl": Namespace(f"{modl_namespace}"),
 "kl-res": Namespace(f"{name_space}lod/resource/"),
 "kl-ont": Namespace(f"{name_space}lod/ontology/"),
 "rdf": RDF,
@@ -43,7 +43,7 @@ def generate_index():
     result_files = os.listdir(pattern_path)
     result_files.sort()
 
-    # Noun CSMODL Ontology 
+    # EASY-AI Ontology 
     ## Minting URIs
     easyai_ontology = f"{name_space}"
     easyai_onto_uri = Namespace(easyai_ontology)[""]
@@ -75,7 +75,7 @@ def generate_index():
 
 
     html_counter=1
-    for boxology_patterns in result_files: # For each Noun
+    for boxology_patterns in result_files: # For each pattern directory
         if not os.path.isdir(os.path.join(pattern_path, boxology_patterns)): # skip auxiliary files (not patterns)
             continue 
         if "all-together" in str(boxology_patterns):
@@ -92,7 +92,7 @@ def generate_index():
             pattern, _ = pattern_file.split("-schema")
             pattern_identifier,_ = pattern.split("-easy-ai")
             # Mint a Noun Pattern
-            boxology_pattern_uri = Namespace(easyai_onto_uri)[f"{pattern_identifier}"]
+            boxology_pattern_uri = Namespace(easyai_ontology)[f"{pattern_identifier}"]
             # Bind
             graph.add( (boxology_pattern_uri, a, OWL.NamedIndividual) )
             graph.add( (boxology_pattern_uri, a, pattern_uri) )

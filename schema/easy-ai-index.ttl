@@ -1,3 +1,4 @@
+@prefix : <https://kastle-lab.org/easyai/> .
 @prefix opla: <http://ontologydesignpatterns.org/opla#> .
 @prefix opla-core: <http://ontologydesignpatterns.org/opla-core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -22,10 +23,10 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
     rdfs:domain opla:Pattern ;
     rdfs:range xsd:string .
 
-<https://kastle-lab.org/easyai/> a owl:Ontology ;
+: a owl:Ontology ;
     opla-core:hasPatternName "Easy-AI Modular Ontology Design Library" .
 
-<https://kastle-lab.org/easyai/1a> a opla:Pattern,
+:1a a opla:Pattern,
         owl:NamedIndividual ;
     rdfs:label "1a-easy-ai"@en ;
     opla:htmlDocumentation """
@@ -40,7 +41,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
     opla:owlRepresentation "schema/1a-easy-ai/1a-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/1a-elementary-pattern/1a-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
-<https://kastle-lab.org/easyai/1ab> a opla:Pattern,
+:1ab a opla:Pattern,
         owl:NamedIndividual ;
     rdfs:label "1ab-easy-ai"@en ;
     opla:htmlDocumentation """
@@ -55,7 +56,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
     opla:owlRepresentation "schema/1ab-easy-ai/1ab-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/1ab-elementary-pattern/1ab-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
-<https://kastle-lab.org/easyai/1b> a opla:Pattern,
+:1b a opla:Pattern,
         owl:NamedIndividual ;
     rdfs:label "1b-easy-ai"@en ;
     opla:htmlDocumentation """
@@ -70,7 +71,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
     opla:owlRepresentation "schema/1b-easy-ai/1b-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/1b-elementary-pattern/1b-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
-<https://kastle-lab.org/easyai/1c> a opla:Pattern,
+:1c a opla:Pattern,
         owl:NamedIndividual ;
     rdfs:label "1c-easy-ai"@en ;
     opla:htmlDocumentation """
@@ -85,7 +86,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
     opla:owlRepresentation "schema/1c-easy-ai/1c-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/1c-elementary-pattern/1c-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
-<https://kastle-lab.org/easyai/1d> a opla:Pattern,
+:1d a opla:Pattern,
         owl:NamedIndividual ;
     rdfs:label "1d-easy-ai"@en ;
     opla:htmlDocumentation """
@@ -100,7 +101,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
     opla:owlRepresentation "schema/1d-easy-ai/1d-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/1d-elementary-pattern/1d-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
-<https://kastle-lab.org/easyai/2a> a opla:Pattern,
+:2a a opla:Pattern,
         owl:NamedIndividual ;
     rdfs:label "2a-easy-ai"@en ;
     opla:htmlDocumentation """
@@ -115,7 +116,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
     opla:owlRepresentation "schema/2a-easy-ai/2a-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/2a-elementary-pattern/2a-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
-<https://kastle-lab.org/easyai/2b> a opla:Pattern,
+:2b a opla:Pattern,
         owl:NamedIndividual ;
     rdfs:label "2b-easy-ai"@en ;
     opla:htmlDocumentation """
@@ -130,7 +131,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
     opla:owlRepresentation "schema/2b-easy-ai/2b-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/2b-elementary-pattern/2b-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
-<https://kastle-lab.org/easyai/2c> a opla:Pattern,
+:2c a opla:Pattern,
         owl:NamedIndividual ;
     rdfs:label "2c-easy-ai"@en ;
     opla:htmlDocumentation """
@@ -145,7 +146,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
     opla:owlRepresentation "schema/2c-easy-ai/2c-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/2c-elementary-pattern/2c-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
-<https://kastle-lab.org/easyai/2d> a opla:Pattern,
+:2d a opla:Pattern,
         owl:NamedIndividual ;
     rdfs:label "2d-easy-ai"@en ;
     opla:htmlDocumentation """
