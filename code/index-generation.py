@@ -4,14 +4,11 @@ from rdflib import URIRef, Graph, Namespace, Literal
 from rdflib import OWL, RDF, RDFS, XSD, TIME
 
 #  Directories
-output_path = "../schema/"
-pattern_path = "../schema/"
-
-# index file name
-output_name = "easy-ai-index.ttl"
+# pattern_path = "../schema/"
+pattern_path = "/home/bddave/Desktop/github/2024-hhai-easy-ai/easy-ai/schema/"
 
 # Prefix Configurations
-name_space = "https://kastle-lab.org/"
+name_space = "https://kastle-lab.org/easyai/"
 modl_namespace = "https://archive.org/services/purl/purl/modular_ontology_design_library#"
 opla_namespace = "https://ontologydesignpatterns.org/"
 
@@ -48,16 +45,16 @@ def generate_index():
 
     # Noun CSMODL Ontology 
     ## Minting URIs
-    easyai_ontology = f"{name_space}/easy-ai"
-    noun_onto_uri = Namespace(noun_ontology)[""]
+    easyai_ontology = f"{name_space}"
+    easyai_onto_uri = Namespace(easyai_ontology)[""]
     
     pattern_uri = pfs["opla"]["Pattern"]
     category_uri = pfs["opla"]["Category"]
     graph.add( (category_uri, a, pfs["owl"]["Class"]) )
 
     ## Bind
-    graph.add( (noun_onto_uri, a, OWL.Ontology) )
-    graph.add( (noun_onto_uri, pfs["opla-core"]["hasPatternName"], Literal("Commonsense Modular Ontology Design Library")) )
+    graph.add( (easyai_onto_uri, a, OWL.Ontology) )
+    graph.add( (easyai_onto_uri, pfs["opla-core"]["hasPatternName"], Literal("Easy-AI Modular Ontology Design Library")) )
 
     ###  Add specific OPLA annotation+property type
     graph.add( (pfs["opla"]["owlRepresentation"], a, pfs["owl"]["DatatypeProperty"]) )
@@ -66,7 +63,6 @@ def generate_index():
     graph.add( (pfs["opla"]["renderedSchemaDiagram"], pfs["rdfs"]["label"], Literal(f"Rendered Schema Diagram", lang="en")) )
     graph.add( (pfs["opla"]["htmlDocumentation"], a, pfs["owl"]["DatatypeProperty"]) )
     graph.add( (pfs["opla"]["htmlDocumentation"], pfs["rdfs"]["label"], Literal(f"Owl HTML Documentation", lang="en")) )
-#    graph.add( (pfs["opla"]["categorization"], a, pfs["owl"]["DatatypeProperty"]) )
 
     graph.add( (pfs["opla"]["owlRepresentation"], pfs["rdfs"]["domain"], pattern_uri) )
     graph.add( (pfs["opla"]["owlRepresentation"], pfs["rdfs"]["range"], pfs["xsd"]["string"]) )
@@ -79,43 +75,58 @@ def generate_index():
 
 
     html_counter=1
-    for filename in result_files: # For each Noun
-        if(os.path.isdir(os.path.join(pattern_path, filename))):
+    for boxology_patterns in result_files: # For each Noun
+        if not os.path.isdir(os.path.join(pattern_path, boxology_patterns)): # skip auxiliary files (not patterns)
+            continue 
+        if "all-together" in str(boxology_patterns):
             continue
-        noun, ext = filename.split(".")
-        # Mint a Noun Pattern
-        noun_pattern_uri = Namespace(noun_ontology)[f"{noun}"]
-        # Bind
-        graph.add( (noun_pattern_uri, a, OWL.NamedIndividual) )
-        graph.add( (noun_pattern_uri, a, pattern_uri) )
+        if "example" in str(boxology_patterns): # skip the instantiated example
+            continue
+        if boxology_patterns == "easy-ai-index.ttl": # Skip the index file
+            continue
 
-        ### Added artifact for CoModIDE
-        path = pattern_path.split("../")[-1]
-        ttl_path = path+f"/{filename}"
-        schema_path = path+f"/schema-diagrams/{noun}.pdf"
-
-        graph.add( (noun_pattern_uri, pfs["opla"]["owlRepresentation"], Literal(f"{ttl_path}", datatype=XSD.string)) )
-        graph.add( (noun_pattern_uri, pfs["rdfs"]["label"], Literal(f"{noun}", lang="en")) )
-        graph.add( (noun_pattern_uri, pfs["opla"]["renderedSchemaDiagram"], Literal(f"{schema_path}", datatype=XSD.string)) )
-
-        # graph.add( (noun_pattern_uri, pfs["opla"]["categorization"], Literal(f"{ttl_path}", datatype=XSD.string)) )
-        # graph.add( (noun_pattern_uri, pfs["rdfs"]["label"], Literal("Category", lang="en")) )
+        filenames = os.listdir(os.path.join(pattern_path, boxology_patterns))
         
-        noun_html = f'''
-            <html>
-            <body>
-            <h3 class="sectionHead"><span class="titlemark">{html_counter}
-            </span> <a id="x1-10001"></a>{noun}</h3>
+        for filename in filenames:
+            pattern_file, ext = filename.split(".")
+            pattern, _ = pattern_file.split("-schema")
+            pattern_identifier,_ = pattern.split("-easy-ai")
+            # Mint a Noun Pattern
+            boxology_pattern_uri = Namespace(easyai_onto_uri)[f"{pattern_identifier}"]
+            # Bind
+            graph.add( (boxology_pattern_uri, a, OWL.NamedIndividual) )
+            graph.add( (boxology_pattern_uri, a, pattern_uri) )
 
-            <body/>
-            <html/>
-        '''
+            ### Added artifact for CoModIDE
+            path = pattern_path.split("../")[-1]
+            ttl_path = path+f"{pattern}/{filename}"
+            schema_path = f"/schema-diagrams/{pattern_identifier}-elementary-pattern/{pattern}-elementary-pattern.pdf"
 
-        graph.add( (noun_pattern_uri, pfs["opla"]["htmlDocumentation"], Literal(f"{noun_html}", datatype=XSD.string)) )
-        graph.add( (noun_pattern_uri, pfs["rdfs"]["label"], Literal(f"{noun}", lang="en")) )
-        html_counter+=1
+            graph.add( (boxology_pattern_uri, pfs["opla"]["owlRepresentation"], Literal(f"{ttl_path}", datatype=XSD.string)) )
+            graph.add( (boxology_pattern_uri, pfs["rdfs"]["label"], Literal(f"{pattern}", lang="en")) )
+            graph.add( (boxology_pattern_uri, pfs["opla"]["renderedSchemaDiagram"], Literal(f"{schema_path}", datatype=XSD.string)) )
 
-    output_path = os.path.join("../csmodl", output_name)
+            # graph.add( (noun_pattern_uri, pfs["opla"]["categorization"], Literal(f"{ttl_path}", datatype=XSD.string)) )
+            # graph.add( (noun_pattern_uri, pfs["rdfs"]["label"], Literal("Category", lang="en")) )
+            
+            noun_html = f'''
+                <html>
+                <body>
+                <h3 class="sectionHead"><span class="titlemark">{html_counter}
+                </span> <a id="x1-10001"></a>{pattern}</h3>
+
+                <body/>
+                <html/>
+            '''
+
+            graph.add( (boxology_pattern_uri, pfs["opla"]["htmlDocumentation"], Literal(f"{noun_html}", datatype=XSD.string)) )
+            graph.add( (boxology_pattern_uri, pfs["rdfs"]["label"], Literal(f"{pattern}", lang="en")) )
+            html_counter+=1
+
+    # output details: index file name
+    output_name = "easy-ai-index.ttl"               
+    output_path = "../schema"
+    output_path = os.path.join(output_path, output_name)
     graph.serialize(format="turtle", encoding="utf-8", destination=output_path)
 
 if __name__ == "__main__":
