@@ -37,7 +37,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
                 <body/>
                 <html/>
             """^^xsd:string ;
-    opla:owlRepresentation "/home/bddave/Desktop/github/2024-hhai-easy-ai/easy-ai/schema/1a-easy-ai/1a-easy-ai-schema.ttl"^^xsd:string ;
+    opla:owlRepresentation "schema/1a-easy-ai/1a-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/1a-elementary-pattern/1a-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
 <https://kastle-lab.org/easyai/1ab> a opla:Pattern,
@@ -52,7 +52,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
                 <body/>
                 <html/>
             """^^xsd:string ;
-    opla:owlRepresentation "/home/bddave/Desktop/github/2024-hhai-easy-ai/easy-ai/schema/1ab-easy-ai/1ab-easy-ai-schema.ttl"^^xsd:string ;
+    opla:owlRepresentation "schema/1ab-easy-ai/1ab-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/1ab-elementary-pattern/1ab-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
 <https://kastle-lab.org/easyai/1b> a opla:Pattern,
@@ -67,7 +67,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
                 <body/>
                 <html/>
             """^^xsd:string ;
-    opla:owlRepresentation "/home/bddave/Desktop/github/2024-hhai-easy-ai/easy-ai/schema/1b-easy-ai/1b-easy-ai-schema.ttl"^^xsd:string ;
+    opla:owlRepresentation "schema/1b-easy-ai/1b-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/1b-elementary-pattern/1b-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
 <https://kastle-lab.org/easyai/1c> a opla:Pattern,
@@ -82,7 +82,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
                 <body/>
                 <html/>
             """^^xsd:string ;
-    opla:owlRepresentation "/home/bddave/Desktop/github/2024-hhai-easy-ai/easy-ai/schema/1c-easy-ai/1c-easy-ai-schema.ttl"^^xsd:string ;
+    opla:owlRepresentation "schema/1c-easy-ai/1c-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/1c-elementary-pattern/1c-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
 <https://kastle-lab.org/easyai/1d> a opla:Pattern,
@@ -97,7 +97,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
                 <body/>
                 <html/>
             """^^xsd:string ;
-    opla:owlRepresentation "/home/bddave/Desktop/github/2024-hhai-easy-ai/easy-ai/schema/1d-easy-ai/1d-easy-ai-schema.ttl"^^xsd:string ;
+    opla:owlRepresentation "schema/1d-easy-ai/1d-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/1d-elementary-pattern/1d-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
 <https://kastle-lab.org/easyai/2a> a opla:Pattern,
@@ -112,7 +112,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
                 <body/>
                 <html/>
             """^^xsd:string ;
-    opla:owlRepresentation "/home/bddave/Desktop/github/2024-hhai-easy-ai/easy-ai/schema/2a-easy-ai/2a-easy-ai-schema.ttl"^^xsd:string ;
+    opla:owlRepresentation "schema/2a-easy-ai/2a-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/2a-elementary-pattern/2a-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
 <https://kastle-lab.org/easyai/2b> a opla:Pattern,
@@ -127,7 +127,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
                 <body/>
                 <html/>
             """^^xsd:string ;
-    opla:owlRepresentation "/home/bddave/Desktop/github/2024-hhai-easy-ai/easy-ai/schema/2b-easy-ai/2b-easy-ai-schema.ttl"^^xsd:string ;
+    opla:owlRepresentation "schema/2b-easy-ai/2b-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/2b-elementary-pattern/2b-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
 <https://kastle-lab.org/easyai/2c> a opla:Pattern,
@@ -142,7 +142,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
                 <body/>
                 <html/>
             """^^xsd:string ;
-    opla:owlRepresentation "/home/bddave/Desktop/github/2024-hhai-easy-ai/easy-ai/schema/2c-easy-ai/2c-easy-ai-schema.ttl"^^xsd:string ;
+    opla:owlRepresentation "schema/2c-easy-ai/2c-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/2c-elementary-pattern/2c-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
 <https://kastle-lab.org/easyai/2d> a opla:Pattern,
@@ -157,7 +157,7 @@ opla:renderedSchemaDiagram a owl:DatatypeProperty ;
                 <body/>
                 <html/>
             """^^xsd:string ;
-    opla:owlRepresentation "/home/bddave/Desktop/github/2024-hhai-easy-ai/easy-ai/schema/2d-easy-ai/2d-easy-ai-schema.ttl"^^xsd:string ;
+    opla:owlRepresentation "schema/2d-easy-ai/2d-easy-ai-schema.ttl"^^xsd:string ;
     opla:renderedSchemaDiagram "/schema-diagrams/2d-elementary-pattern/2d-easy-ai-elementary-pattern.pdf"^^xsd:string .
 
 opla:Category a owl:Class .

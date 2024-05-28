@@ -5,7 +5,7 @@ from rdflib import OWL, RDF, RDFS, XSD, TIME
 
 #  Directories
 # pattern_path = "../schema/"
-pattern_path = "/home/bddave/Desktop/github/2024-hhai-easy-ai/easy-ai/schema/"
+pattern_path = "../schema/"
 
 # Prefix Configurations
 name_space = "https://kastle-lab.org/easyai/"
