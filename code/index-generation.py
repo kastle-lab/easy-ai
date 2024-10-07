@@ -98,8 +98,8 @@ def generate_index():
             graph.add( (boxology_pattern_uri, a, pattern_uri) )
 
             ### Added artifact for CoModIDE
-            path = pattern_path.split("../")[-1]
-            ttl_path = path+f"{pattern}/{filename}"
+            path = pattern_path.split("../")[-1].replace("/", "")
+            ttl_path = f"easy-ai/{path}/{pattern}/{filename}"
             schema_path = f"/schema-diagrams/{pattern_identifier}-elementary-pattern/{pattern}-elementary-pattern.pdf"
 
             graph.add( (boxology_pattern_uri, pfs["opla"]["owlRepresentation"], Literal(f"{ttl_path}", datatype=XSD.string)) )
